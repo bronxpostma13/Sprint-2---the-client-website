@@ -17,6 +17,9 @@ body {
 header {
   padding: 20px;
 }
+main h1{
+  margin-top: 1em;
+}
 
 #logo img {
   width: 600px;
@@ -58,13 +61,34 @@ nav a:hover {
   justify-content: center;
 }
 main h2{
+    color: #317073;
     margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    
+
+}
+#Date{
+  color: #317072;
+  text-decoration: none;
+  font-size: 30px;
+  align-items: center;
 }
 main p{
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 15px;    
+    width: clamp(min(93.75vw, 50ch), 70vw, 75ch);
+    align-items: center;
+}  
+
+#Afspraak-foto{
+  margin-bottom: 30px;
+  align-items: center; 
 }
+
+
+
 #lees-meer {
   display: inline-block;
   width: 100px;
@@ -93,7 +117,7 @@ section {
 }
 
 section img {
-  width: 250px;
+  width: 100%;
   height: 250px;
   object-fit: cover; 
 }
@@ -106,7 +130,7 @@ section img {
 }
 footer {
   width: 1280px;
-  height: 190px;
+  height: max-content;
   background-color: #317073;
   margin: 0 auto;
   display: flex;
@@ -114,28 +138,30 @@ footer {
   align-items: center;
   color: white;
   border-radius: 4px;
+  margin-top: 30px;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
+  width: auto;
   padding: 20px 40px;
 }
 
 
-.links {
+ .links {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px; 
 }
 
-.links h1 {
+.links h2{
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2px;
+  margin-top: 5px;
 }
+
 
 .links a {
   color: white;
@@ -147,7 +173,7 @@ footer {
 }
 
 
-@media (max-width: 1200px) {
+@media (min-width < 700px) {
   footer {
     width: 100%;
   }
