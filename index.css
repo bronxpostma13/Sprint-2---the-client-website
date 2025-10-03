@@ -78,13 +78,14 @@ main h2{
 main p{
     margin-left: 50px;
     margin-right: 50px;
-    width: clamp(min(93.75vw, 50ch), 70vw, 75ch);
+    margin-top: 15px;  
     align-items: center;
 }  
 
 #Afspraak-foto{
   margin-bottom: 30px;
-  align-items: center; 
+  align-items: center;
+ 
 }
 
 
