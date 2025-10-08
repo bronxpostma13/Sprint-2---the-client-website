@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,163 +5,144 @@
   font-family: Arial, sans-serif;
 }
 
-body {
+  body {
   background-color: #ffffff;
   color: #363636;
-  line-height: 1.6;
+  line-height: 1.4;
   text-align: center;
-}
+  padding: 0 1rem;
+  font-size: 16px;
+   }
 
-
-header {
-  padding: 20px;
-}
-main h1{
-  margin-top: 1em;
-}
+/* HEADER + LOGO */
+     header {
+      padding: 20px 0;
+     
+    }
 
 #logo img {
-  width: 600px;
-  height: 150px;
-  object-fit: contain; 
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
 }
 
-#site-name {
-  margin-top: 10px;
-  font-size: 1.8rem;
-}
-
+/* NAVIGATIE */
 nav {
-  width: 1280px;
-  height: 50px;
   background-color: #317073;
-  margin: 0 auto; 
   display: flex;
-  justify-content: space-evenly; 
+  flex-direction: column; /* kolom op mobiel */
   align-items: center;
-  border-radius: 4px; 
+  gap: 8px;
+  padding: 10px 0;
+  border-radius: 4px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  flex: 1; 
+  width: 100%;
   text-align: center;
+  padding: 10px 0;
 }
 
 nav a:hover {
   background: rgba(255, 255, 255, 0.2);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-main h2{
-    color: #317073;
-    margin-top: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    align-items: center;
-    
 
+/* MAIN CONTENT */
+main h1 {
+  margin-top: 1em;
 }
-#Date{
+
+main p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ #Date{
   color: #317072;
   text-decoration: none;
   font-size: 30px;
   align-items: center;
 }
-main p{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 15px;  
-    align-items: center;
-}  
-
-#Afspraak-foto{
-  margin-bottom: 30px;
-  align-items: center;
- 
-}
-
 
 
 #lees-meer {
   display: inline-block;
-  width: 100px;
-  height: 40px;
-  line-height: 40px;         
-  background-color: #317073;  
+  padding: 10px 20px;
+  background-color: #d09482;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 4px;       
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 #lees-meer:hover {
-  background-color: #255652;  
+  background-color: #a08c85;
 }
+
+/* SECTION */
 section {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  max-width: 1080px;   
-  margin: 30px auto; 
-  gap: 20px;          
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 100%;
 }
 
 section img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover; 
+  width: 480px;
+  height: auto;
+  border-radius: 6px;
 }
 
 .textblok {
   display: flex;
-  flex-direction: column; 
-  flex: 1;
+  flex-direction: column;
   text-align: center;
 }
+
+main h2 {
+  color: #317073;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* FOOTER */
 footer {
-  width: 1280px;
-  height: max-content;
   background-color: #317073;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   border-radius: 4px;
-  margin-top: 30px;
+  margin-top: 40px;
+  padding: 20px 10px;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
-  width: auto;
-  padding: 20px 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-
- .links {
+.links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; 
+  gap: 8px;
 }
 
-.links h2{
+.links h2 {
   font-weight: bold;
   text-align: center;
-  margin-top: 5px;
 }
-
 
 .links a {
   color: white;
@@ -173,16 +153,60 @@ footer {
   text-decoration: underline;
 }
 
+/* ====== MEDIA QUERIES ====== */
 
-@media (min-width < 700px) {
-  footer {
-    width: 100%;
+/* Tablets (vanaf 768px) */
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    top:0;
   }
-  .footer-container {
-    flex-direction: column;
+
+  main p {
+    max-width: 700px;
+  }
+
+  section {
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    max-width: 1080px;
+  }
+
+  section img {
+    width: 45%;
+  }
+
+  .textblok {
+    flex: 1;
+  }
+
+  footer {
+    padding: 30px 40px;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 }
 
+/* Laptops/desktops (vanaf 1024px) */
+@media (min-width: 1024px) {
+  #logo img {
+    max-width: 600px;
+  }
 
+  nav {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  footer {
+    max-width: 1280px;
+    margin: 30px auto;
+  }
+}
