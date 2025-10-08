@@ -39,6 +39,7 @@ In CSS heb ik veel met media query's gewerkt om de website gebruikbaar te maken 
 
 Ook heb ik met veel css eigenschappen gewerkt 
 
+<img width="1169" height="828" alt="Schermafbeelding 2025-10-08 122851" src="https://github.com/user-attachments/assets/d9fc92d5-2c39-4282-a426-eec3c2d27933" />
 
 
 ## Licentie
