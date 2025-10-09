@@ -11,7 +11,7 @@
   line-height: 1.4;
   text-align: center;
   padding: 0 1rem;
-  font-size: 16px;
+  font-size: 18px;
    }
 
 /* HEADER + LOGO */
@@ -38,6 +38,14 @@ nav {
   gap: 8px;
   padding: 10px 0;
   border-radius: 4px;
+  z-index: 10;
+
+     /* @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    top:0;
+  } */
 }
 
 nav a {
@@ -53,6 +61,44 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.searchbar-section {
+  background-color: #f2f2f2;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.searchbar {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.searchbar input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #d09482;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.searchbar button {
+  background-color: #d09482;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchbar button:hover {
+  background-color: #25585b;
+}
+
 /* MAIN CONTENT */
 main h1 {
   margin-top: 1em;
@@ -64,10 +110,14 @@ main p {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+
+    /* @media (min-width: 768px) {
+    max-width: 700px;
+  } */
 }
 
  #Date{
-  color: #317072;
+  color: #d09482;
   text-decoration: none;
   font-size: 30px;
   align-items: center;
@@ -76,44 +126,100 @@ main p {
 
 #lees-meer {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 40px;
   background-color: #d09482;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  border-radius: 9999px; 
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #lees-meer:hover {
   background-color: #a08c85;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* SECTION */
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 30px auto;
-  max-width: 100%;
+.vergaderingen {
+  position: relative;
+  background-image: url("assets/Slim-vergaderen.jpg"); /* jouw eerste foto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-section img {
-  width: 480px;
-  height: auto;
-  border-radius: 6px;
+.vergaderingen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* donkere overlay */
+  backdrop-filter: blur(6px); /* vage foto */
+  z-index: 0;
 }
+
+.vergaderingen-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.vergaderingen-content {
+  max-width: 600px;
+  background-color: #317073;
+  padding: 30px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+}
+
+.vergaderingen-content h2{
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.vergaderingen-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 
 .textblok {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+main h1{
+  color: #317073;
+  font-size: 1.9rem;
+  margin-top: 1rem;
+}
+
 
 main h2 {
   color: #317073;
   font-size: 1.5rem;
   margin-top: 1rem;
+}
+
+#article-Evenement h1{
+  color: #317073;
+  font-size: 1.9rem;
+  margin-top: 1rem;
+}
+#article-Ad-Talent h1{
+    margin-top: 40px;
 }
 
 /* FOOTER */
@@ -153,7 +259,6 @@ footer {
   text-decoration: underline;
 }
 
-/* ====== MEDIA QUERIES ====== */
 
 /* Tablets (vanaf 768px) */
 @media (min-width: 768px) {
@@ -168,19 +273,20 @@ footer {
     max-width: 700px;
   }
 
-  section {
-    flex-direction: row;
+ .vergadering{
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1080px;
-  }
-
-  section img {
-    width: 45%;
+    text-align: center;
   }
 
   .textblok {
-    flex: 1;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .vergadering img {
+    width: 90%;
+    max-width: 350px;
   }
 
   footer {
@@ -191,6 +297,33 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
+  }
+
+  .vergaderingen {
+    padding: 60px 15px;
+  }
+
+  .vergaderingen-content {
+    padding: 20px;
+  }
+
+  .vergaderingen-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .vergaderingen-content p {
+    font-size: 0.9rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .searchbar {
+    flex-direction: column;
+  }
+
+  .searchbar button {
+    width: 100%;
   }
 }
 
