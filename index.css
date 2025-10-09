@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+   font-family: 'Nunito', Arial, sans-serif;
 }
 
   body {
@@ -33,19 +33,12 @@
 nav {
   background-color: #317073;
   display: flex;
-  flex-direction: column; /* kolom op mobiel */
+  flex-direction: column; 
   align-items: center;
   gap: 8px;
   padding: 10px 0;
   border-radius: 4px;
   z-index: 10;
-
-     /* @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: sticky;
-    top:0;
-  } */
 }
 
 nav a {
@@ -66,7 +59,7 @@ nav a:hover {
   padding: 15px 0;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  
 }
 
 .searchbar {
@@ -324,6 +317,21 @@ footer {
 
   .searchbar button {
     width: 100%;
+  }
+  .vergaderingen {
+    padding: 60px 15px;
+  }
+
+  .vergaderingen-content {
+    padding: 20px;
+  }
+
+  .vergaderingen-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .vergaderingen-content p {
+    font-size: 0.9rem;
   }
 }
 
